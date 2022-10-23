@@ -35,9 +35,11 @@ static
 express 탑재, 정적인 파일을 제공
 */
 const __dirname = path.resolve();
-app.use("/public", express.static(path.join(__dirname, "public")));
-// localhost:3000/style/style.css
-// public/style/style.css
+app.use("/", express.static(path.join(__dirname, "public")));
+
+// 웹 서버에 있는 정적인 파일에 접근하기 위해 사용
+// 사용자가 https://www.백엔드주소.com/ ---> public 폴더로 접근이 가능
+// https://www.백엔드주소.com/_body.html ---> public 폴더의 _body.html로 접근
 
 app.listen(app.get("port"), () => {
   // 서버 구동
@@ -49,5 +51,5 @@ app.get("/", (req, res) => {
 });
 
 app.get("/body", (req, res) => {
-  res.sendFile(__dirname + "/_body.html");
+  res.sendFile(__dirname + "/public/_body.html");
 });
