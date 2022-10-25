@@ -6,6 +6,7 @@ import user from "./routers/user.js";
 const app = express();
 app.set("port", 3000);
 
+// 기본 경로명, router <"/" === "/post">
 app.use("/post", post);
 app.use("/comment", comment);
 app.use("/user", user);

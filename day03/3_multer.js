@@ -14,31 +14,6 @@ app.use(morgan("dev"), express.json(), express.urlencoded({ extended: false }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/", express.static(path.join(__dirname, "public")));
 
-/*
-const upload = multer({
-  // multer 저장소 setting
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, "uploads"); // 도착지 설정 done(error, 폴더명)
-    },
-    filename(req, file, done) {
-      const ext = path.extname(file.originalname); // 파일명의 확장자 가져옴
-      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
-      // 확장자를 제외한 파이명 + 현재 시간 + 확장자명
-    },
-  }),
-  limits: { fileSize: 5 * 1024 * 1024 },
-  // 기준은 byte 5MG
-});
-*/
-
-/*
-try {
-  fs.readdirSync("uploads");
-} catch (error) {
-  fs.mkdirSync("uploads/");
-}
-*/
 mkdir();
 
 app.post("/upload", upload.single("image"), (req, res) => {
@@ -67,9 +42,10 @@ app.post(
   "/uploads",
   upload.fields([{ name: "image1" }, { name: "image2" }]),
   (req, res) => {
-    console.log(req.files);
-    //   console.log(req.files.image1[0]);
-    //   console.log(req.files.image2[0]);
+    //  console.log(req.files);
+    //  파일은 여러 개 보낼 수 있기 때문에 배열로 받아와짐
+    console.log(req.files.image1[0]);
+    console.log(req.files.image2[0]);
   }
 );
 

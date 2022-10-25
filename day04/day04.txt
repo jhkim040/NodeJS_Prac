@@ -1,0 +1,104 @@
+----------------------------
+
+포스트맨
+
+API를 테스트할 수 있는 소프트웨어
+https://www.postman.com/downloads/
+
+-------------------------------------
+
+DBMS (Database Management System)
+    - 데이터 베이스 관리 시스템
+
+Data?
+    의미가 있는(쓰임새가 있는) 모든 정보와 자료
+
+    ex)
+    어디 사는 몇 살의 누구가 남성 혹은 여성이 요리 유튜브를 시청했다.
+
+    Data가 돈이 되는 시대 => 많은 데이터량을 저장할 필요가 있다.
+
+    즉 이러한 막대한 양의 데이터를 효율적으로 관리하기 위해 DBMS 활용
+
+-------------------------------------
+
+DataBase?
+
+DBMS 
+    - 다양한 데이터 집단을 관리하는 시스템 도구
+    - 다수의 사용자가 데이터 베이스 내의 테이터에 접근할 수 있도록
+    (협업 관련)하는 도구
+
+DBMS 종류
+    - 계층형
+    - 네트워크형
+    - 관계형
+    - NoSQL
+
+-------------------------------------
+
+RDBMS (Relational Database Management System)
+= 관계형 DBMS
+
+1) 관계형 데이터 모델에 기초를 두고 있음
+2) 모든 데이터를 2차원의 테이블 형태(표, 엑셀)로 표현
+3) 테이블이 서로 연관되어 있기 때문에 다른 DBMS보다 효율적으로 
+    데이터를 구성할 수 있고 확장성 있게 구성할 수 있음
+
+종류: Oracle, MySQL, MaraiDB, MicrosoftSQL, PostgreSQL
+
+-------------------------------------
+
+NoSQL : mongoDB = 간단한거(연관성이 필요없는 것), 빅데이터
+
+장점 : 
+대용량 데이터 저장 가능
+데이터 간의 구조가 없기 때문에 테이블 간의 관계가 불필요
+저장이 비교적 자유로움
+
+단점:
+데이터의 구조가 없기 때문에 데이터 중복이 일어날 수 있음
+
+-------------------------------------
+
+MySQL   
+    Oracle과 더불어 세계에서 가장 널리 쓰이는 오픈 소스 RDBMS
+
+    설치
+        1. https://www.mysql.com/downloads/
+        2. 맨 하단의 My SQL Community 다운로드 클릭
+        3. MySQL Community Server 클릭
+        4. go to download page 클릭, 용량 큰 것
+
+        developer : server, client <-- 선택
+        server only: my sql server
+
+-------------------------------------
+
+MySQL 데이터타입, 제약조건(스키마)
+
+    * 데이터타입    
+        1. 숫자 타입
+            - 정수 : int, bigint (smallint, mediumnt)
+            - 소수 : float, double
+        2. 문자타입
+            - char, varchar, text
+
+        3. 날짜와 시간
+        - date, datetime, timestamp
+        4. enum('f', 'w') ==> 괄호 안에 있는 데이터만
+
+    * 제약조건
+        1. NOT NULL : null 을 저장할 수 없음(required)
+        2. UNIQUE : 중복된 값을 저장할 수 없음
+        3. DEFAULT : 기본 값
+        4. PRIMARY KEY, FOREIGN KEY
+            PK : 기본키 (not null, UNIQUE)
+            FK : 외래키
+                RDBMS의 핵심 키 테이블 간의 관계 설정
+
+
+-------------------------------------
+
+    + 트랜지션, PL/SQL, 프로시져, join, 서브쿼리, 집계함수, 연산자 order by, group having
+    + 모델링, 정규화, 반정규화
